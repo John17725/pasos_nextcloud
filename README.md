@@ -42,12 +42,12 @@ Alias /nextcloud "/var/www/nextcloud/"
 ---
 # CONFIGURACION DE APACHE
 
-- a2enconf nextcloud
-- a2enmod rewrite 
-- a2enmod headers
-- a2enmod env
-- a2enmod dir
-- a2enmod mime
+- sudo a2enconf nextcloud
+- sudo a2enmod rewrite 
+- sudo a2enmod headers
+- sudo a2enmod env
+- sudo a2enmod dir
+- sudo a2enmod mime
 
 # CONFIGURACION PHP 10-OPCACHE.ini > /etc/php/7.4/apache2/conf.d
 ### Pegar el contenido del recuadro en el fichero
@@ -60,4 +60,6 @@ opcache.memory_consumption=128
 opcache.save.commets=1
 opcache.revalidate_freq=1
 ```
-
+---
+# REINICIO DE APACHE
+- sudo systemctl restart apache2
